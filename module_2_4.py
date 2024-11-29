@@ -1,23 +1,18 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+numbers = [i for i in range(10000, 16000)]
+primes = []
+not_primes = []
 
-primes = list()
-not_primes = list()
-is_prime = True
-counter = []
+for elem in numbers:
+    is_prime = True
 
-for i in numbers:
-    if i == 1:
-        continue
-    for j in numbers:
-        if j > i and len(counter) == 2:
-            primes.append(i)
-            counter.clear()
+    for divider in range(2, int(elem**0.5) + 1):
+        if elem % divider == 0:
+            is_prime = False
             break
-        elif j > 1 and len(counter) > 2:
-            not_primes.append(i)
-            counter.clear()
-            break
-        if i % j == 0:
-            counter.append(i)
+    if is_prime and elem != 1:
+        primes.append(elem)
+    else:
+        not_primes.append(elem)
+
 print('Primes: ', primes)
 print('Not Primes: ', not_primes)

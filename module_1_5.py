@@ -28,3 +28,8 @@ print(collection, "a = ", a)
 
 collection2 = {'denis': 1244}
 print(collection2.get('denis'))
+
+if 3.14:
+    print(1)
+else:
+    print(0)
