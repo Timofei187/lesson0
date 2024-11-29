@@ -12,9 +12,9 @@ def check_winner():
     combinations = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))
     for i in range(len(chars_)):
         for j in combinations:
-            if (area[j[0]] == chars_[i]
-                    and area[j[1]] == chars_[i]
-                    and area[j[2]] == chars_[i]):
+            if (area[j[0]] == chars_[i] and
+                area[j[1]] == chars_[i] and
+                area[j[2]] == chars_[i]):
                 print("Победили ", chars_[i])
                 return True
     return False
@@ -37,9 +37,7 @@ def do_turn(index_):
     num = my_check_input('Введите номер строки ')
     col = my_check_input('Введите номер столбца ')
     position = calc_position(num, col)
-    # print(position)
     if right_turn(position):
-        # print(area[position])
         area[position] = chars_[index_]
         draw_area(area)
     else:
