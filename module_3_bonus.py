@@ -1,21 +1,3 @@
-def calculate_structure_sum1(data):
-    sum_ = 0
-    for i in data:
-        # print('for', type(i))
-        if isinstance(i, list)  or isinstance(i, tuple) or isinstance(i, set):
-            # print('if isinstance', i)
-            sum_ += calculate_structure_sum(i)
-        if isinstance(i, dict):
-            for key, value in i.items():
-                sum_ += len(key)
-                sum_ += value
-        if isinstance(i, int):
-            sum_ += i
-        if isinstance(i, str):
-            sum_ += len(i)
-        # print('sum', sum_, 'i', i)
-    return sum_
-
 def calculate_structure_sum(data):
     sum_ = 0
     if isinstance(data, list) or isinstance(data, tuple) or isinstance(data, set):
